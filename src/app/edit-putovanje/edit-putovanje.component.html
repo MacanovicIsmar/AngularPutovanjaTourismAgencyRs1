@@ -1,0 +1,88 @@
+
+
+<!-- Modal -->
+<div  *ngIf="vidljiv==true" id="exampleModalLive" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel"
+      style="display: block; padding-right: 17px; ">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="width:450px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLiveLabel">Modal title</h5>
+        <button type="button" class="close" (click)="vidljiv=false" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="Desni Dio" class="jumbotron"  *ngIf="vidljiv==true" style="float:left; padding:5%;  margin-top:1%;width:400px;">
+
+          <div style="display:none">
+            <label>Zaduzenja ID</label>
+            <input [(ngModel)]="Editputovanje3.id" />
+          </div>
+
+
+          <div style="margin-top:2%">
+            <label>Opis</label>
+            <input [(ngModel)]="Editputovanje3.opis" style="display:inline" class="form-control">
+          </div>
+
+          <div style="margin-top:2%">
+            <label>Trajanje</label>
+            <input [(ngModel)]="Editputovanje3.trajanje" style="display:inline" class="form-control">
+          </div>
+
+          <div style="margin-top:2%">
+            <label>VaziDO</label>
+            <input type="date" [(ngModel)]="Editputovanje3.vaziDO" [ngModel]="Editputovanje3.vaziDO | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+          </div>
+
+          <div style="margin-top:2%">
+            <label>VaziOD</label>
+            <input type="date" [(ngModel)]="Editputovanje3.vaziOD" [ngModel]="Editputovanje3.vaziOD | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+          </div>
+
+          <div style="margin-top:2%">
+            <label>Polazak</label>
+            <input type="date" [(ngModel)]="Editputovanje3.polazak" [ngModel]="Editputovanje3.polazak | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+          </div>
+
+          <div style="margin-top:2%">
+             <label>Zaduzenje</label>
+             <select [(ngModel)]="this.Zaduzenjeobject"
+                     class="form-select" ariel-label="Default select example">
+               <option *ngFor="let n of Editputovanje3.zaduzenjeSpisakItema"
+                       [ngValue]="n"
+               >{{n.text}}</option>
+             </select>
+           </div>
+
+          <div style="margin-top:2%">
+            <label>Vodic</label>
+            <select [(ngModel)]="this.Vodicobject"
+                    class="form-select" ariel-label="Default select example">
+              <option *ngFor="let n of Editputovanje3.vodicSpisakItema"
+                      [ngValue]="n"
+              >{{n.text}}</option>
+            </select>
+          </div>
+
+          <div style="margin-top:2%">
+            <label>Smjestaj</label>
+            <select [(ngModel)]="this.Smjestajobject"
+                    class="form-select" ariel-label="Default select example">
+              <option *ngFor="let n of Editputovanje3.spisakSmjestaja"
+                      [ngValue]="n"
+              >{{n.text}}</option>
+            </select>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)='vidljiv=false' >Close</button>
+        <button type="button" class="btn btn-danger" (click)="PutovanjeSnimi()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -94,7 +94,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/Stilovi/bootstrapdark.css",
+              "src/assets/CSS/morestyles.css"
             ],
             "scripts": []
           }

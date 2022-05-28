@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="DesniDio" class="jumbotron"  *ngIf="Editputovanje!=null" style="float:left; padding:5%;  margin-top:1%;width:600px;">
+
+  <div style="display:none">
+    <label>Zaduzenja ID</label>
+    <input [(ngModel)]="Editputovanje.id" />
+  </div>
+
+
+  <div style="margin-top:2%">
+    <label>Opis</label>
+    <input [(ngModel)]="Editputovanje.opis" style="display:inline" class="form-control">
+  </div>
+
+  <div style="margin-top:2%">
+    <label>Trajanje</label>
+    <input [(ngModel)]="Editputovanje.trajanje" style="display:inline" class="form-control">
+  </div>
+
+  <div style="margin-top:2%">
+    <label>VaziDO</label>
+    <input type="date" [(ngModel)]="Editputovanje.vaziDO" [ngModel]="Editputovanje.vaziDO | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+  </div>
+
+  <div style="margin-top:2%">
+    <label>VaziOD</label>
+    <input type="date" [(ngModel)]="Editputovanje.vaziOD" [ngModel]="Editputovanje.vaziOD | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+  </div>
+
+  <div style="margin-top:2%">
+    <label>Polazak</label>
+    <input type="date" [(ngModel)]="Editputovanje.polazak" [ngModel]="Editputovanje.polazak | date:'yyyy-MM-dd'" style="display:inline" class="form-control">
+  </div>
+
+  <!-- <div style="margin-top:2%">
+     <label>Grupa</label>
+     <select [(ngModel)]="this.grupaobject" ng-change='selectionChanged(color)'
+             class="form-select" ariel-label="Default select example">
+       <option *ngFor="let n of Editputovanje.grupeSpisakItema"
+               [ngValue]="n"
+       >{{n.text}}</option>
+     </select>
+   </div>-->
+
+  <!--<div style="margin-top:2%">
+    <label>Zaduzenje</label>
+    <select [(ngModel)]="this.Zaduzenjeobject"
+            class="form-select" ariel-label="Default select example">
+      <option *ngFor="let n of Editputovanje.zaduzenjeSpisakItema"
+              [ngValue]="n"
+      >{{n.text}}</option>
+    </select>
+  </div>-->
+
+  <div style="margin-top:2%">
+    <label>Vodic</label>
+    <select [(ngModel)]="this.Vodicobject"
+            class="form-select" ariel-label="Default select example">
+      <option *ngFor="let n of Editputovanje.vodicSpisakItema"
+              [ngValue]="n"
+      >{{n.text}}</option>
+    </select>
+  </div>
+
+  <div style="margin-top:2%">
+    <label>Smjestaj</label>
+    <select [(ngModel)]="this.Smjestajobject"
+            class="form-select" ariel-label="Default select example">
+      <option *ngFor="let n of Editputovanje.spisakSmjestaja"
+              [ngValue]="n"
+      >{{n.text}}</option>
+    </select>
+  </div>
+  <div style="margin-top:3%">
+    <label></label>
+    <input type="button" value="Snimi" class="btn btn-danger" (click)="PutovanjeSnimi()" />
+
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>

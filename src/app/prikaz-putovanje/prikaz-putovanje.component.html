@@ -1,0 +1,57 @@
+
+<!--<button (click)="Putovanjedownload()">Putovanja</button>-->
+
+
+<p *ngIf="PrikazModeln2==null">
+
+  podaci se downloaduju
+
+</p>
+
+
+<p *ngIf="PrikazModeln2!=null">
+
+  prvo putovanje je {{PrikazModeln2.putovanjeList[0].opis}}
+
+</p> <br>
+
+
+
+
+
+
+
+
+<div style="clear: both">Trazi <input [(ngModel)]="Trazi"></div>
+<div class="jumbotron">
+  <table class="table table-dark table-bordered">
+    <tr>
+
+      <th>Slika</th>
+      <th>VaziOD</th>
+      <th>VaziDO</th>
+      <th>Polazak</th>
+      <th>Trajanje</th>
+      <th>Detalji</th>
+      <th>Akcije</th>
+    </tr>
+    <tr *ngFor="let x of GetPutovanja()">
+      <td>
+
+        <label>Trenutna slika putovanja</label>
+
+        <img *ngIf="x.slikaPostoji==true" src="{{x.slika}}" style="max-width:320px; max-height:520px" />
+        <img *ngIf="x.slikaPostoji==false"src="http://via.placeholder.com/640x360" class="avatar img-circle img-thumbnail" alt="avatar" style="max-width:320px; max-height:520px"/>
+      </td>
+      <td>{{this.datepipe.transform(x.vaziOD, 'dd.MM.yyyy')}}</td>
+      <td>{{this.datepipe.transform(x.vaziDO,'dd.MM.yyyy')}}</td>
+      <td>{{this.datepipe.transform(x.polazak,'dd.MM.yyyy')}}</td>
+      <td>{{x.trajanje}}</td>
+      <th>Opis:{{x.opis}} <br/>Vodic: {{x.vodic}} <br/>Zaduzenje: {{x.zaduzenje}} </th>
+      <td>
+        <button class="btn btn-primary" style="width:100px" (click)="Obrisi(x)">Obrisi</button>
+        <button class="btn btn-primary" style="width:100px" (click)="UrediPutovanje(x)" >Uredi</button>
+      </td>
+    </tr>
+  </table>
+</div>
